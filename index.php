@@ -19,6 +19,18 @@ require_once __DIR__ . '/includes/header.php';
 
 <main class="container-xl py-4 flex-grow-1">
 
+    <?php if (isset($_GET['error']) && $_GET['error'] === 'forbidden'): ?>
+        <!-- Forbidden Access Alert Banner -->
+        <div class="alert alert-danger border-0 rounded-4 shadow-sm p-3 mb-4 d-flex align-items-center gap-3 alert-dismissible fade show" role="alert">
+            <i class="bi bi-shield-x fs-3 text-danger flex-shrink-0"></i>
+            <div class="flex-grow-1">
+                <strong class="d-block text-danger">ปฏิเสธการเข้าถึง (Access Denied)</strong>
+                <small class="text-secondary">หน้าแผงควบคุมผู้ดูแลระบบสงวนสิทธิ์เฉพาะบัญชีผู้ดูแลระบบรหัส <strong>690510692</strong> เท่านั้น</small>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+
     <?php if (!$loggedIn): ?>
         <!-- Guest Mode Alert Banner -->
         <div class="alert alert-warning border-0 rounded-4 shadow-sm p-3 mb-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
@@ -222,8 +234,8 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="fw-semibold text-dark small">
-                            <i class="bi bi-mortarboard-fill text-primary me-1"></i> ความคืบหน้าการสำเร็จการศึกษาตลอดหลักสูตร
+                        <span class="fw-semibold text-dark small d-inline-flex align-items-center gap-1.5">
+                            <img src="CSCMU-LOGO.png" alt="CS CMU Logo" style="width: 18px; height: 18px; object-fit: contain;"> ความคืบหน้าการสำเร็จการศึกษาตลอดหลักสูตร
                         </span>
                         <span class="fw-bold text-primary small" id="curTotalPercent">0%</span>
                     </div>

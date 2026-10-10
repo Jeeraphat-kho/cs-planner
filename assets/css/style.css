@@ -1,0 +1,508 @@
+/* ==============================================================
+   CMU Computer Science Study Planner - Main Stylesheet
+   Theme: Chiang Mai University Modern Purple & Indigo
+   Font: Prompt (Google Fonts)
+   ============================================================== */
+
+:root {
+    --cmu-purple: #682c91;
+    --cmu-purple-dark: #4c1d6b;
+    --cmu-purple-light: #8e44ad;
+    --cmu-purple-subtle: #f5f0fa;
+    --cmu-accent: #6366f1;
+    --cmu-accent-hover: #4f46e5;
+    --body-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+    --shadow-soft: 0 4px 15px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 10px 25px -3px rgba(104, 44, 145, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: -0.01em;
+}
+
+/* Header & Navbar */
+.planner-navbar {
+    background: linear-gradient(135deg, #4a154b 0%, #682c91 50%, #4338ca 100%);
+    box-shadow: 0 4px 20px rgba(74, 21, 75, 0.25);
+}
+
+.brand-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffd166;
+    overflow: hidden;
+}
+
+.brand-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* KPI Summary Cards */
+.kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.kpi-icon.purple {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.kpi-icon.indigo {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.kpi-icon.emerald {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.kpi-icon.amber {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.gpax-pill {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.gpax-pill.gpa-high {
+    color: #059669;
+}
+
+.gpax-pill.gpa-med {
+    color: #2563eb;
+}
+
+.gpax-pill.gpa-low {
+    color: #d97706;
+}
+
+.gpax-pill.gpa-none {
+    color: #64748b;
+    font-size: 1.25rem;
+}
+
+/* Year Summary Chips */
+.year-chip {
+    background: #f1f5f9;
+    border-radius: 9999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.825rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.year-chip:hover {
+    background: #e2e8f0;
+}
+
+/* Semester Card Section */
+.year-section {
+    margin-bottom: 2.25rem;
+}
+
+.year-header {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 0.85rem 1.25rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.semester-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.25s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.semester-card:hover {
+    border-color: #cbd5e1;
+}
+
+.semester-card-header {
+    background: linear-gradient(to right, #fcfaff, #f8fafc);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.9rem 1.15rem;
+}
+
+.semester-card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.semester-card-footer {
+    background: #f8fafc;
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1.15rem;
+}
+
+/* Course Items & Tables */
+.course-table {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+.course-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+    padding: 0.65rem 0.75rem;
+}
+
+.course-table td {
+    vertical-align: middle;
+    padding: 0.75rem 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.course-table tr:last-child td {
+    border-bottom: none;
+}
+
+.course-code-badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 700;
+    background: #f3e8ff;
+    color: #682c91;
+    border: 1px solid #e9d5ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.825rem;
+}
+
+.course-name-text {
+    font-weight: 500;
+    color: #1e293b;
+    line-height: 1.35;
+}
+
+.course-meta-text {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Grade Select Box */
+.grade-select {
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 82px;
+}
+
+.grade-select:focus {
+    border-color: var(--cmu-purple-light);
+    box-shadow: 0 0 0 3px rgba(104, 44, 145, 0.15);
+}
+
+.grade-select[data-grade="A"] { background-color: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.grade-select[data-grade="B+"] { background-color: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+.grade-select[data-grade="B"] { background-color: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+.grade-select[data-grade="C+"] { background-color: #fefce8; color: #a16207; border-color: #fef08a; }
+.grade-select[data-grade="C"] { background-color: #fffbeb; color: #b45309; border-color: #fde68a; }
+.grade-select[data-grade="D+"] { background-color: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+.grade-select[data-grade="D"] { background-color: #fff1f2; color: #be123c; border-color: #fecdd3; }
+.grade-select[data-grade="F"] { background-color: #fef2f2; color: #b91c1c; border-color: #fca5a5; }
+.grade-select[data-grade=""] { background-color: #f8fafc; color: #64748b; border-color: #e2e8f0; }
+
+/* Empty State */
+.semester-empty {
+    text-align: center;
+    padding: 2.25rem 1rem;
+    color: #94a3b8;
+}
+
+.semester-empty i {
+    font-size: 2.5rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Modals */
+.modal-header-cmu {
+    background: linear-gradient(135deg, #682c91 0%, #4f46e5 100%);
+    color: white;
+}
+
+.course-modal-list {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.course-search-item {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.15s ease;
+}
+
+.course-search-item:hover {
+    background-color: #f8fafc;
+}
+
+.course-search-item:last-child {
+    border-bottom: none;
+}
+
+/* Quick Filter Pills */
+.filter-pill {
+    font-size: 0.775rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.filter-pill.active, .filter-pill:hover {
+    background: #682c91;
+    color: #ffffff;
+    border-color: #682c91;
+}
+
+/* Action Buttons */
+.btn-cmu {
+    background-color: #682c91;
+    color: #ffffff;
+    border: 1px solid #682c91;
+}
+
+.btn-cmu:hover, .btn-cmu:focus {
+    background-color: #552378;
+    color: #ffffff;
+    border-color: #552378;
+}
+
+.btn-cmu-outline {
+    background-color: transparent;
+    color: #682c91;
+    border: 1px solid #d8b4fe;
+}
+
+.btn-cmu-outline:hover, .btn-cmu-outline:focus {
+    background-color: #f3e8ff;
+    color: #552378;
+    border-color: #c084fc;
+}
+
+.btn-icon-danger {
+    color: #94a3b8;
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0.45rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btn-icon-danger:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
+}
+
+/* Collapsible toggle animation */
+.collapse-icon {
+    transition: transform 0.25s ease;
+}
+
+.collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+/* Toast container */
+.toast-container {
+    z-index: 1090;
+}
+
+/* Curriculum Status & Progress Tracker */
+.curriculum-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.curriculum-cat-box {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.curriculum-cat-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+    border-color: #cbd5e1;
+}
+
+.bg-purple {
+    background-color: #682c91 !important;
+}
+
+.bg-gradient-purple {
+    background: linear-gradient(135deg, #682c91 0%, #4f46e5 100%) !important;
+}
+
+.text-purple {
+    color: #682c91 !important;
+}
+
+.bg-purple-subtle {
+    background-color: #f3e8ff !important;
+}
+
+.border-purple {
+    border-color: #682c91 !important;
+}
+
+.border-purple-subtle {
+    border-color: #e9d5ff !important;
+}
+
+.cur-cat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    .course-table th, .course-table td {
+        padding: 0.5rem 0.4rem;
+    }
+    
+    .course-meta-text {
+        font-size: 0.7rem;
+    }
+
+    .kpi-card {
+        margin-bottom: 0.5rem;
+    }
+
+    .gpax-pill {
+        font-size: 1.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .planner-navbar, .no-print, .btn, .modal {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white;
+        font-size: 12pt;
+    }
+    
+    .collapse {
+        display: block !important;
+        height: auto !important;
+    }
+    
+    .kpi-card, .semester-card, .year-header {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+    }
+}
+
+/* Glassmorphism & Color Subtles */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-purple-subtle {
+    background-color: #f3e8ff !important;
+}
+
+.border-purple-subtle {
+    border-color: #d8b4fe !important;
+}
+

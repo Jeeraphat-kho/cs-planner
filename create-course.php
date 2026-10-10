@@ -171,7 +171,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="card-body p-4 p-md-5 text-white position-relative">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <span class="badge bg-white bg-opacity-20 text-white border border-white border-opacity-25 px-3 py-1.5 rounded-pill mb-3">
+                    <span class="badge bg-white bg-opacity-20 text-dark border border-white border-opacity-25 px-3 py-1.5 rounded-pill mb-3">
                         <i class="bi bi-people-fill me-1"></i> CMU Crowdsourced Course Library
                     </span>
                     <h1 class="h2 fw-bold text-white mb-2">

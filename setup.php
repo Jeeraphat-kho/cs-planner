@@ -109,6 +109,8 @@ if ($isCli) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Setup - CMU CS Study Planner</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="CSCMU-LOGO.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -121,7 +123,9 @@ if ($isCli) {
     <div class="container" style="max-width: 680px;">
         <div class="hero-banner p-4 p-md-5 mb-4 shadow">
             <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-mortarboard-fill display-5"></i>
+                <div class="bg-white rounded-3 p-1.5 shadow-sm" style="width: 58px; height: 58px; display: inline-flex; align-items: center; justify-content: center;">
+                    <img src="CSCMU-LOGO.png" alt="CS CMU Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
                 <div>
                     <h2 class="fw-bold mb-1">CMU CS Study Planner</h2>
                     <p class="mb-0 opacity-75">การติดตั้งและเตรียมฐานข้อมูล (Database Setup)</p>
